@@ -5,8 +5,8 @@ services:
     build:
       context: ..
       dockerfile: server/dev.Dockerfile
-    ports:
-      - "8888:8000"
+    #ports:
+      #- "8888:8000"
     env_file:
       - .env
     networks:
@@ -46,13 +46,13 @@ services:
       volumes:
         - postgres_db:/var/lib/postgresql/data
         - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
-      ports:
-        - "8432:5432"
+      #ports:
+        #- "8432:5432"
 
   mem0-dashboard:
     build: ./dashboard
-    ports:
-      - "3000:3000"
+    #ports:
+      #- "3000:3000"
     networks:
       - mem0_network
     environment:
